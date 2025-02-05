@@ -1,1 +1,96 @@
-
+body, html{
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .people {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    place-items: center;
+  }
+  
+  .person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 220px;
+    padding: 12px;
+    cursor: pointer;
+    position: relative;
+    transition: all 1s ease;
+    border-radius: 8px;
+  
+    &:hover {
+      background-color: lightgray;
+    }
+  
+    &:hover .extra {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    &:hover img {
+      border-radius: 50px;
+    }
+  }
+  
+  
+  .photo {
+    position: relative;
+  
+    & img {
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      object-fit: cover;
+      transition: all 1s ease;
+    }
+  }
+  
+  .rank {
+    position: absolute;
+    top: calc(50% - 28px/2);
+    right: 5px;
+    padding: 5px 10px;
+  
+    color: black;
+    font-weight: bold;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+  }
+  
+  
+  .details {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .name {
+    display: block;
+    margin-top: 5px;
+  
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .extra {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+  }
+  
+  @media (min-width: 500px) {
+    .people {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    .people {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
