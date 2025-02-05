@@ -17,8 +17,13 @@ body {
   position: relative;
 }
 
-.person person:hover .extra {
+.person:hover .extra {
   visibility: visible;
+  opacity: 1;
+}
+
+.person:hover img {
+  border-radius: 50px;
 }
 
 .photo {
@@ -27,9 +32,10 @@ body {
 
 .photo img {
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 100%;
   width: 200px;
-  height: 231px;
+  height: 200px;
+  transition: all .3s;
 }
 
 .rank {
@@ -57,9 +63,9 @@ body {
 .extra {
   opacity: 0;
   visibility: hidden;
-  transition: opacity .3s ease visibility .3s ease;
   color: #000;
   font-size: 14px;
+  transition: all .3s;
 }
 
 @media (width >= 500px) {
