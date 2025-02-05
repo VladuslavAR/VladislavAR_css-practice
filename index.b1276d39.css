@@ -1,20 +1,29 @@
-body {
+body, html {
   margin: 0;
+  padding: 10px;
 }
 
 .people {
-  text-align: center;
   grid-template-columns: 1fr;
+  place-items: center;
   gap: 20px;
   display: grid;
 }
 
 .person {
   cursor: pointer;
+  border-radius: 8px;
   flex-direction: column;
   align-items: center;
+  max-width: 220px;
+  padding: 12px;
+  transition: all 1s;
   display: flex;
   position: relative;
+}
+
+.person:hover {
+  background-color: #d3d3d3;
 }
 
 .person:hover .extra {
@@ -35,7 +44,7 @@ body {
   border-radius: 100%;
   width: 200px;
   height: 200px;
-  transition: all .3s;
+  transition: all 1s;
 }
 
 .rank {
@@ -45,11 +54,12 @@ body {
   padding: 5px 10px;
   font-weight: bold;
   position: absolute;
-  top: 50%;
+  top: calc(50% - 14px);
   right: 5px;
 }
 
 .details {
+  text-align: center;
   margin-top: 10px;
 }
 
@@ -65,7 +75,7 @@ body {
   visibility: hidden;
   color: #000;
   font-size: 14px;
-  transition: all .3s;
+  transition: all 1s;
 }
 
 @media (width >= 500px) {
